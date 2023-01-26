@@ -34,14 +34,20 @@
             ]
         },
         {
-            "name": "lldb-Launch",
+            "name": "codelldb",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/build/${relativeFileDirname}/${fileBasenameNoExtension}",
-            "cwd": "${workspaceFolder}/build/${relativeFileDirname}/",
-            "args": [],
+            "program": "${command:cmake.launchTargetPath}",
+            "cwd": "${command:cmake.launchTargetDirectory}",
+            "args": [
+                "-l",
+                "1234"
+            ],
+            "env": {
+                "PATH": "${env:PATH}:${command:cmake.getLaunchTargetDirectory}"
+            },
             "terminal": "external",
-            "stopOnEntry":false
+            "stopOnEntry": false
         }
     ]
 }
