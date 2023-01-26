@@ -11,6 +11,10 @@ endif()
 
 project(my_project_name VERSION 0.0.1 LANGUAGES C CXX)
 
+execute_process(COMMAND conan install .. --build=missing)
+set(CONAN_DISABLE_CHECK_COMPILER TRUE)
+include(${CMAKE_CURRENT_BINARY_DIR}/conan_paths.cmake)
+
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
 add_subdirectory(./src)

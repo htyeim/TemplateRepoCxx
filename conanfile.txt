@@ -1,0 +1,12 @@
+[build_requires]
+
+[requires]
+glog/[>=0.6.0]
+gtest/1.13.0
+
+
+[generators]
+cmake_find_package
+cmake_paths
+
+[options]

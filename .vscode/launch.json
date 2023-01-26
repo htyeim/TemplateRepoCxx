@@ -32,6 +32,16 @@
                     "ignoreFailures": true
                 }
             ]
+        },
+        {
+            "name": "lldb-Launch",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/${relativeFileDirname}/${fileBasenameNoExtension}",
+            "cwd": "${workspaceFolder}/build/${relativeFileDirname}/",
+            "args": [],
+            "terminal": "external",
+            "stopOnEntry":false
         }
     ]
 }
